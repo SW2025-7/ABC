@@ -10,9 +10,14 @@
 <br>
 <% end %>
 
-<%= link_to "新規追加", new_tweet_path %><br>
-<%= link_to "ログイン", top_main_path %><br>
-<%= link_to "ログアウト", top_logout_path %>
+<% if session[:login_uid] %>
+    <%= link_to "新規追加", new_tweet_path %><br>
+    <%= link_to "ログアウト", top_logout_path %><br>
+    ログイン中UID:<%= current_user.uid %><br>
+    <%= link_to "プロフィール", profile_path(current_user.profile) %>
+<% else %>
+    <%= link_to "ログイン", top_main_path %><br>
+<% end %>
 
-ログイン中UID:<%= session[:login_uid] %>
+
 
