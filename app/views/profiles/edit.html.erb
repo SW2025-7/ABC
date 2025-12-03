@@ -1,2 +1,5 @@
-<h1>Profiles#edit</h1>
-<p>Find me in app/views/profiles/edit.html.erb</p>
+<%= form_with model: @profile do |f| %>
+  <%= f.label :message, 'プロフィール' %>
+  <%= f.text_field :message %>
+  <%= f.submit '更新' %>
+<% end %>

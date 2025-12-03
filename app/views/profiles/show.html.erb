@@ -1,5 +1,5 @@
 <%= session[:login_uid] %><br>
 <%= @profile.message %><br>
-<%= link_to "編集", edit_profile(@profile) %>
+<%= link_to "編集", edit_profile_path(@profile) %>
 
 <%= link_to "ツイート一覧", tweets_path %>

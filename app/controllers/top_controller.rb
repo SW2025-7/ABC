@@ -4,7 +4,8 @@ class TopController < ApplicationController
   end
   
   def login
-    if User.find_by(uid: params[:uid]) and User.find_by(pass: params[:pass])
+    user = User.find_by(uid: params[:uid])
+    if user and user.authenticate(params[:pass])
       session[:login_uid] = params[:uid]
       redirect_to tweets_path
     end
