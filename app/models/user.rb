@@ -11,3 +11,4 @@ class User < ApplicationRecord
     self.likes.exists?(post_id: post.id)
   end
 end
+

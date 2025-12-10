@@ -5,3 +5,4 @@ class UsersController < ApplicationController
     @favorite_posts = current_user.liked_posts
   end
 end
+
