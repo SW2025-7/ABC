@@ -1,5 +1,13 @@
 class User < ApplicationRecord
-    has_many :tweets
-    has_many :likes
-    has_many :like_tweets,through: :likes,source: :tweet
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
+  has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  # いいねした投稿を直接取得する設定
+  has_many :liked_posts, through: :likes, source: :post
+
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
 end
