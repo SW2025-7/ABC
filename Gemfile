@@ -68,11 +68,9 @@ group :test do
 end
 
 
-gem "pg", "~> 1.1"
 
 gem "devise", "~> 4.9"
 
 gem "ransack", "~> 4.4"
 
 gem "devise-i18n", "~> 1.15"
-
