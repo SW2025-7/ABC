@@ -69,3 +69,4 @@ gem "devise", "~> 4.9"
 gem "ransack", "~> 4.4"
 
 gem "devise-i18n", "~> 1.15"
+gem "pg", "~> 1.1"
