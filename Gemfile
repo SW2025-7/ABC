@@ -64,9 +64,13 @@ group :test do
   gem "selenium-webdriver"
 end
 
+group :production do
+  gem "pg", "~> 1.1"
+end
+
 gem "devise", "~> 4.9"
 
 gem "ransack", "~> 4.4"
 
 gem "devise-i18n", "~> 1.15"
-gem "pg", "~> 1.1"
+
