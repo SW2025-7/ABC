@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.ransack(params[:q])
-    # distinct: true で重複を防ぎ、新着順などで並び替え
+
     @posts = @q.result(distinct: true).includes(:user)
   end
 
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    # ログインユーザーに紐づけて作成
+    
     @post = current_user.posts.build(post_params)
 
     if @post.save

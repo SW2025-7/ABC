@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   
-  # ★トップページを投稿一覧にする（これが無いとエラーになります）
+  
   root 'posts#index'
 
   resources :posts do

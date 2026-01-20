@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    # 新規登録時と編集時に、name, grade, major の保存を許可
-    # （前の university は不要なら消してもOKですが、残しておいても害はありません）
+    
     keys = [:name, :grade, :major]
     
     devise_parameter_sanitizer.permit(:sign_up, keys: keys)
